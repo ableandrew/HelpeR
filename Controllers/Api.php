@@ -30,9 +30,8 @@ class Api extends Controller
         if (method_exists($obj, "get_" . $urlPath[3])) {
             $method = "get_" . $urlPath[3];
             $data = $obj->$method();
-            echo "<pre>";
-            print_r($data);
-            echo "</pre>";
+            $array=json_encode($data);
+            echo $array;
         }
     }
 }
